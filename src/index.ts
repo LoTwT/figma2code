@@ -1,1 +1,1 @@
-export const one = 1
+export { transform } from "@/utils"

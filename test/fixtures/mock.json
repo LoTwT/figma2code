@@ -1,0 +1,249 @@
+{
+  "id": "11:2",
+  "name": "test frame",
+  "type": "FRAME",
+  "scrollBehavior": "SCROLLS",
+  "blendMode": "PASS_THROUGH",
+  "children": [
+    {
+      "id": "11:3",
+      "name": "Frame 4",
+      "type": "FRAME",
+      "scrollBehavior": "SCROLLS",
+      "blendMode": "PASS_THROUGH",
+      "children": [
+        {
+          "id": "11:4",
+          "name": "Frame 5",
+          "type": "FRAME",
+          "scrollBehavior": "SCROLLS",
+          "blendMode": "PASS_THROUGH",
+          "children": [
+            {
+              "id": "11:6",
+              "name": "按钮文字",
+              "type": "TEXT",
+              "scrollBehavior": "SCROLLS",
+              "blendMode": "PASS_THROUGH",
+              "absoluteBoundingBox": {
+                "x": -2138,
+                "y": -891,
+                "width": 80,
+                "height": 24
+              },
+              "absoluteRenderBounds": {
+                "x": -2137.43994140625,
+                "y": -888.8200073242188,
+                "width": 78.079833984375,
+                "height": 18.46002197265625
+              },
+              "constraints": {
+                "vertical": "TOP",
+                "horizontal": "LEFT"
+              },
+              "fills": [
+                {
+                  "blendMode": "NORMAL",
+                  "type": "SOLID",
+                  "color": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1,
+                    "a": 1
+                  }
+                }
+              ],
+              "strokes": [],
+              "strokeWeight": 1,
+              "strokeAlign": "OUTSIDE",
+              "effects": [],
+              "characters": "按钮文字",
+              "style": {
+                "fontFamily": "Inter",
+                "fontPostScriptName": null,
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 20,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 24.204544067382812,
+                "lineHeightPercent": 100,
+                "lineHeightUnit": "INTRINSIC_%"
+              },
+              "layoutVersion": 4,
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {},
+              "lineTypes": ["NONE"],
+              "lineIndentations": [0]
+            }
+          ],
+          "absoluteBoundingBox": {
+            "x": -2159,
+            "y": -903,
+            "width": 122,
+            "height": 49
+          },
+          "absoluteRenderBounds": {
+            "x": -2159,
+            "y": -903,
+            "width": 122,
+            "height": 49
+          },
+          "constraints": {
+            "vertical": "TOP",
+            "horizontal": "LEFT"
+          },
+          "clipsContent": true,
+          "background": [
+            {
+              "blendMode": "NORMAL",
+              "type": "SOLID",
+              "color": {
+                "r": 0.34546875953674316,
+                "g": 0.7784563302993774,
+                "b": 0.8374999761581421,
+                "a": 1
+              }
+            }
+          ],
+          "fills": [
+            {
+              "blendMode": "NORMAL",
+              "type": "SOLID",
+              "color": {
+                "r": 0.34546875953674316,
+                "g": 0.7784563302993774,
+                "b": 0.8374999761581421,
+                "a": 1
+              }
+            }
+          ],
+          "strokes": [
+            {
+              "blendMode": "NORMAL",
+              "type": "SOLID",
+              "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 1
+              }
+            }
+          ],
+          "strokeWeight": 1,
+          "strokeAlign": "INSIDE",
+          "backgroundColor": {
+            "r": 0.34546875953674316,
+            "g": 0.7784563302993774,
+            "b": 0.8374999761581421,
+            "a": 1
+          },
+          "effects": []
+        }
+      ],
+      "absoluteBoundingBox": {
+        "x": -2180,
+        "y": -920,
+        "width": 375,
+        "height": 200
+      },
+      "absoluteRenderBounds": {
+        "x": -2180,
+        "y": -920,
+        "width": 375,
+        "height": 200
+      },
+      "constraints": {
+        "vertical": "TOP",
+        "horizontal": "LEFT"
+      },
+      "clipsContent": true,
+      "background": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.7250000238418579,
+            "g": 0.3292708396911621,
+            "b": 0.3292708396911621,
+            "a": 1
+          }
+        }
+      ],
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.7250000238418579,
+            "g": 0.3292708396911621,
+            "b": 0.3292708396911621,
+            "a": 1
+          }
+        }
+      ],
+      "strokes": [],
+      "strokeWeight": 1,
+      "strokeAlign": "INSIDE",
+      "backgroundColor": {
+        "r": 0.7250000238418579,
+        "g": 0.3292708396911621,
+        "b": 0.3292708396911621,
+        "a": 1
+      },
+      "effects": []
+    }
+  ],
+  "absoluteBoundingBox": {
+    "x": -2180,
+    "y": -920,
+    "width": 375,
+    "height": 812
+  },
+  "absoluteRenderBounds": {
+    "x": -2180,
+    "y": -920,
+    "width": 375,
+    "height": 812
+  },
+  "constraints": {
+    "vertical": "TOP",
+    "horizontal": "LEFT"
+  },
+  "clipsContent": true,
+  "background": [
+    {
+      "blendMode": "NORMAL",
+      "type": "SOLID",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      }
+    }
+  ],
+  "fills": [
+    {
+      "blendMode": "NORMAL",
+      "type": "SOLID",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      }
+    }
+  ],
+  "strokes": [],
+  "strokeWeight": 1,
+  "strokeAlign": "INSIDE",
+  "backgroundColor": {
+    "r": 1,
+    "g": 1,
+    "b": 1,
+    "a": 1
+  },
+  "effects": []
+}
