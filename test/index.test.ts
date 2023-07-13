@@ -7,52 +7,46 @@ describe("figma2code", () => {
     expect(result).toMatchInlineSnapshot(`
       {
         "children": [
-          {
-            "children": [
+          <div
+            style={
               {
-                "children": [
-                  {
-                    "children": [
-                      "按钮文字",
-                    ],
-                    "props": {
-                      "style": {
-                        "color": "rgb(1, 1, 1)",
-                        "fontFamily": "Inter",
-                        "fontSize": 20,
-                        "fontWeight": 400,
-                        "lineHeight": 24.204544067382812,
-                        "textAlign": "LEFT",
-                      },
-                    },
-                    "type": "span",
-                  },
-                ],
-                "props": {
-                  "style": {
-                    "backgroundColor": "rgba(0.34546875953674316, 0.7784563302993774, 0.8374999761581421, 1)",
-                    "border": "solid 1px rgb(0, 0, 0)",
-                    "height": 49,
-                    "width": 122,
-                  },
-                },
-                "type": "div",
-              },
-            ],
-            "props": {
-              "style": {
-                "backgroundColor": "rgba(0.7250000238418579, 0.3292708396911621, 0.3292708396911621, 1)",
+                "backgroundColor": "rgba(184.87500607967377, 83.96406412124634, 83.96406412124634, 1)",
                 "border": "none",
                 "height": 200,
                 "width": 375,
-              },
-            },
-            "type": "div",
-          },
+              }
+            }
+          >
+            <div
+              style={
+                {
+                  "backgroundColor": "rgba(88.0945336818695, 198.50636422634125, 213.56249392032623, 1)",
+                  "border": "solid 1px rgb(0, 0, 0)",
+                  "height": 49,
+                  "width": 122,
+                }
+              }
+            >
+              <span
+                style={
+                  {
+                    "color": "rgb(255, 255, 255)",
+                    "fontFamily": "Inter",
+                    "fontSize": 20,
+                    "fontWeight": 400,
+                    "lineHeight": 24.204544067382812,
+                    "textAlign": "LEFT",
+                  }
+                }
+              >
+                按钮文字
+              </span>
+            </div>
+          </div>,
         ],
         "props": {
           "style": {
-            "backgroundColor": "rgba(1, 1, 1, 1)",
+            "backgroundColor": "rgba(255, 255, 255, 1)",
             "border": "none",
             "height": 812,
             "width": 375,
