@@ -28,7 +28,7 @@ jobs:
       - name: Lint
         run: nr lint
 
-  typecheck:
+  figma2code/typecheck:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -44,12 +44,12 @@ jobs:
         run: nci
 
       - name: Build
-        run: nr build
+        run: pnpm -C packages/figma2code run build
 
       - name: Typecheck
-        run: nr typecheck
+        run: pnpm -C packages/figma2code run typecheck
 
-  test:
+  figma2code/test:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -72,7 +72,7 @@ jobs:
         run: nci
 
       - name: Build
-        run: nr build
+        run: pnpm -C packages/figma2code run build
 
       - name: Test
-        run: nr test
+        run: pnpm -C packages/figma2code run test

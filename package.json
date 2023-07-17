@@ -1,8 +1,8 @@
 {
-  "name": "figma2code",
-  "version": "0.0.1",
+  "name": "figma2code-monorepo",
+  "private": true,
   "packageManager": "pnpm@8.6.7",
-  "description": "figma2code",
+  "description": "figma2code-monorepo",
   "author": "LoTwT <l709937065@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/LoTwT/figma2code#readme",
@@ -13,60 +13,24 @@
   "bugs": {
     "url": "https://github.com/LoTwT/figma2code/issues"
   },
-  "keywords": [],
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "watch": "tsup --watch",
-    "build": "tsup",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prettier": "prettier --write .",
-    "typecheck": "tsc --noEmit",
-    "test": "vitest",
-    "prepublishOnly": "pnpm build",
-    "release": "bumpp && npm publish",
     "prepare": "simple-git-hooks",
     "up": "taze latest -I -r",
-    "play": "pnpm -C playground run dev"
+    "play": "pnpm -C playground run dev",
+    "release:figma2code": "pnpm -C packages/figma2code run release"
   },
   "devDependencies": {
     "@ayingott/eslint-config": "^0.2.5",
-    "@figma/plugin-typings": "^1.70.0",
-    "@types/node": "^20.4.2",
-    "@types/react": "^18.2.14",
-    "bumpp": "^9.1.1",
     "eslint": "^8.44.0",
     "lint-staged": "^13.2.3",
     "pnpm": "^8.6.7",
     "prettier": "^3.0.0",
-    "react": "^18.2.0",
     "simple-git-hooks": "^2.8.1",
     "taze": "^0.11.2",
-    "tsup": "^7.1.0",
-    "typescript": "^5.1.6",
-    "unplugin-auto-import": "^0.16.6",
-    "vitest": "^0.33.0"
+    "typescript": "^5.1.6"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged"
