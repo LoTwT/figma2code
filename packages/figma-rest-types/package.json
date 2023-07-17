@@ -1,8 +1,8 @@
 {
-  "name": "figma2code",
-  "version": "0.0.1",
+  "name": "figma-rest-types",
+  "version": "0.0.0",
   "packageManager": "pnpm@8.6.7",
-  "description": "figma2code",
+  "description": "figma reset api types",
   "author": "LoTwT <l709937065@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/LoTwT/figma2code#readme",
@@ -15,18 +15,14 @@
   },
   "keywords": [
     "figma",
-    "figma to code"
+    "figma reset api",
+    "types"
   ],
-  "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
+      "types": "./dist/index.d.ts"
     }
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
@@ -40,23 +36,13 @@
     "dist"
   ],
   "scripts": {
-    "watch": "tsup --watch",
-    "build": "tsup",
     "typecheck": "tsc --noEmit",
-    "test": "vitest",
     "prepublishOnly": "pnpm build",
     "release": "bumpp && npm publish"
   },
   "devDependencies": {
-    "@figma/plugin-typings": "^1.70.0",
-    "@types/node": "^20.4.2",
-    "@types/react": "^18.2.14",
-    "bumpp": "^9.1.1",
-    "pnpm": "^8.6.7",
-    "react": "^18.2.0",
+    "bump": "^0.2.5",
     "tsup": "^7.1.0",
-    "typescript": "^5.1.6",
-    "unplugin-auto-import": "^0.16.6",
-    "vitest": "^0.33.0"
+    "typescript": "^5.1.6"
   }
 }

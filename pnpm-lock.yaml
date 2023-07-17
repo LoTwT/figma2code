@@ -33,6 +33,18 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
 
+  packages/figema-rest-types:
+    devDependencies:
+      bump:
+        specifier: ^0.2.5
+        version: 0.2.5
+      tsup:
+        specifier: ^7.1.0
+        version: 7.1.0(typescript@5.1.6)
+      typescript:
+        specifier: ^5.1.6
+        version: 5.1.6
+
   packages/figma2code:
     devDependencies:
       '@figma/plugin-typings':
@@ -1440,6 +1452,11 @@ packages:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
       semver: 7.5.3
+    dev: true
+
+  /bump@0.2.5:
+    resolution: {integrity: sha512-d4CZYvcP317+twjo7PhGd+EptYjvw83itgaxbJtJnHE64qH29qMtqAQ5vb3x3Su7WuaPjow88GBgp0FDBxbm8w==}
+    hasBin: true
     dev: true
 
   /bumpp@9.1.1:
