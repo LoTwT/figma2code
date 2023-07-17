@@ -50,7 +50,7 @@
   "devDependencies": {
     "@figma/plugin-typings": "^1.70.0",
     "@types/node": "^20.4.2",
-    "@types/react": "^18.2.14",
+    "@types/react": "^18.2.15",
     "bumpp": "^9.1.1",
     "pnpm": "^8.6.7",
     "react": "^18.2.0",
