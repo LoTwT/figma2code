@@ -35,6 +35,9 @@ importers:
 
   packages/figma-rest-types:
     devDependencies:
+      '@ayingott/sucrose':
+        specifier: ^0.0.4
+        version: 0.0.4
       bumpp:
         specifier: ^9.1.1
         version: 9.1.1
@@ -225,6 +228,13 @@ packages:
       - jest
       - supports-color
       - typescript
+    dev: true
+
+  /@ayingott/sucrose@0.0.4:
+    resolution: {integrity: sha512-CBTAffWnoB1k+X44+Mc5UDO5umKlGK9xdr49NYyVTxfZRHdlK2UIvDiDW/VoG/g9w/ag1jEelAmvMTHKJMPxOA==}
+    dependencies:
+      dotenv: 16.0.3
+      dotenv-expand: 10.0.0
     dev: true
 
   /@babel/code-frame@7.22.5:
@@ -1872,6 +1882,11 @@ packages:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
       domhandler: 5.0.3
+    dev: true
+
+  /dotenv-expand@10.0.0:
+    resolution: {integrity: sha512-GopVGCpVS1UKH75VKHGuQFqS1Gusej0z4FyQkPdwjil2gNIv+LNsqBlboOzpJFZKVT95GkCyWJbBSdFEFUWI2A==}
+    engines: {node: '>=12'}
     dev: true
 
   /dotenv@16.0.3:
