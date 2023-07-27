@@ -588,6 +588,20 @@ export interface PStrokeGeometry {
   strokeGeometry: Path[]
 }
 
+export interface PBooleanOperation {
+  /**
+   * indicating the type of boolean operation applied
+   */
+  booleanOperation: BooleanOperation
+}
+
+export enum BooleanOperation {
+  UNION = "UNION",
+  INTERSECT = "INTERSECT",
+  SUBTRACT = "SUBTRACT",
+  EXCLUDE = "EXCLUDE",
+}
+
 export enum StrokeAlign {
   /**
    * stroke drawn inside the shape boundary

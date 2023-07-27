@@ -2,9 +2,12 @@ import type {
   BaseNode,
   PAbsoluteBoundingBox,
   PAbsoluteRenderBounds,
+  PArcData,
   PBackground,
   PBackgroundColor,
   PBlendMode,
+  PBooleanOperation,
+  PCharacters,
   PChidlren,
   PClipsContent,
   PConstraints,
@@ -76,6 +79,13 @@ export type Node =
   | GroupNode
   | SectionNode
   | VectorNode
+  | BooleanOperationNode
+  | StarNode
+  | LineNode
+  | EllipseNode
+  | RegularPolygonNode
+  | TableNode
+  | TabelCellNode
 
 /**
  * @see https://www.figma.com/developers/api#document-props
@@ -103,6 +113,7 @@ export interface CanvasNode
  */
 export interface FrameNode
   extends BaseNode,
+    PChidlren,
     PLocked,
     PBackground,
     PBackgroundColor,
@@ -159,12 +170,19 @@ export interface FrameNode
   readonly type: "FRAME"
 }
 
+/**
+ * @see https://www.figma.com/developers/api#group-props
+ */
 export type GroupNode = Omit<FrameNode, "type"> & {
   readonly type: "GROUP"
 }
 
+/**
+ * @see https://www.figma.com/developers/api#section-props
+ */
 export interface SectionNode
   extends BaseNode,
+    PChidlren,
     PSectionContentsHidden,
     PDevStatus,
     PFills,
@@ -176,8 +194,12 @@ export interface SectionNode
   readonly type: "SECTION"
 }
 
+/**
+ * @see https://www.figma.com/developers/api#vector-props
+ */
 export interface VectorNode
   extends BaseNode,
+    PChidlren,
     PLocked,
     PExportSettings,
     PBlendMode,
@@ -209,4 +231,87 @@ export interface VectorNode
     PStrokeAlign,
     PStyles {
   readonly type: "VECTOR"
+}
+
+/**
+ * @see https://www.figma.com/developers/api#boolean_operation-props
+ */
+export interface BooleanOperationNode
+  extends Omit<VectorNode, "type">,
+    PBooleanOperation {
+  readonly type: "BOOLEAN_OPERATION"
+}
+
+/**
+ * @see https://www.figma.com/developers/api#star-props
+ */
+export interface StarNode extends Omit<VectorNode, "type"> {
+  readonly type: "STAR"
+}
+
+/**
+ * @see https://www.figma.com/developers/api#line-props
+ */
+export interface LineNode extends Omit<VectorNode, "type"> {
+  readonly type: "LINE"
+}
+
+/**
+ * @see https://www.figma.com/developers/api#ellipse-props
+ */
+export interface EllipseNode extends Omit<VectorNode, "type">, PArcData {
+  readonly type: "ELLIPSE"
+}
+
+/**
+ * @see https://www.figma.com/developers/api#regular_polygon-props
+ */
+export interface RegularPolygonNode extends Omit<VectorNode, "type"> {
+  readonly type: "REGULAR_POLYGON"
+}
+
+/**
+ * @see https://www.figma.com/developers/api#rectangle-props
+ */
+export interface RectangleNode
+  extends Omit<VectorNode, "type">,
+    PCornerRadius,
+    PRectangleCornerRadii,
+    PCornerSmoothing {
+  readonly type: "RECTANGLE"
+}
+
+/**
+ * FigJam Table node.
+ * @see https://www.figma.com/developers/api#table-props
+ */
+export interface TableNode
+  extends BaseNode,
+    PAbsoluteBoundingBox,
+    PAbsoluteRenderBounds,
+    PBlendMode,
+    PChidlren,
+    PConstraints,
+    PEffects,
+    PExportSettings,
+    PRelativeTransform,
+    PSize,
+    PStrokes,
+    PStrokeAlign {
+  readonly type: "TABLE"
+}
+
+/**
+ * FigJam Table cell node.
+ * @see https://www.figma.com/developers/api#table_cell-props
+ */
+export interface TabelCellNode
+  extends BaseNode,
+    PAbsoluteBoundingBox,
+    PAbsoluteRenderBounds,
+    PCharacters,
+    PFills,
+    PRelativeTransform,
+    PSize {
+  readonly type: "TABLE_CELL"
 }
