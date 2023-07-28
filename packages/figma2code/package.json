@@ -1,7 +1,7 @@
 {
   "name": "figma2code",
   "version": "0.0.1",
-  "packageManager": "pnpm@8.6.7",
+  "packageManager": "pnpm@8.6.10",
   "description": "figma2code",
   "author": "LoTwT <l709937065@gmail.com>",
   "license": "MIT",
@@ -48,11 +48,11 @@
     "release": "bumpp && npm publish"
   },
   "devDependencies": {
-    "@figma/plugin-typings": "^1.70.0",
-    "@types/node": "^20.4.2",
-    "@types/react": "^18.2.15",
+    "@figma/plugin-typings": "^1.72.0",
+    "@types/node": "^20.4.5",
+    "@types/react": "^18.2.17",
     "bumpp": "^9.1.1",
-    "pnpm": "^8.6.7",
+    "pnpm": "^8.6.10",
     "react": "^18.2.0",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6",

@@ -1,7 +1,8 @@
 {
   "name": "figma2code-monorepo",
+  "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@8.6.7",
+  "packageManager": "pnpm@8.6.10",
   "description": "figma2code-monorepo",
   "author": "LoTwT <l709937065@gmail.com>",
   "license": "MIT",
@@ -20,15 +21,17 @@
     "prepare": "simple-git-hooks",
     "up": "taze latest -I -r",
     "play": "pnpm -C playground run dev",
+    "release": "bumpp -r",
     "release:figma2code": "pnpm -C packages/figma2code run release"
   },
   "devDependencies": {
-    "@ayingott/eslint-config": "^0.2.5",
+    "@ayingott/eslint-config": "^0.2.6",
+    "bumpp": "^9.1.1",
     "eslint": "^8.45.0",
     "lint-staged": "^13.2.3",
-    "pnpm": "^8.6.7",
+    "pnpm": "^8.6.10",
     "prettier": "^3.0.0",
-    "simple-git-hooks": "^2.8.1",
+    "simple-git-hooks": "^2.9.0",
     "taze": "^0.11.2",
     "typescript": "^5.1.6"
   },
