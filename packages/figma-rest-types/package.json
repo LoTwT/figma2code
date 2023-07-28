@@ -1,6 +1,6 @@
 {
   "name": "figma-rest-types",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "packageManager": "pnpm@8.6.10",
   "description": "figma reset api types",
   "author": "LoTwT <l709937065@gmail.com>",
