@@ -21,8 +21,8 @@
     "prepare": "simple-git-hooks",
     "up": "taze latest -I -r",
     "play": "pnpm -C playground run dev",
-    "release": "bumpp -r",
-    "release:figma2code": "pnpm -C packages/figma2code run release"
+    "prepublishOnly": "pnpm build -r",
+    "release": "bumpp -r && pnpm publish -r"
   },
   "devDependencies": {
     "@ayingott/eslint-config": "^0.2.6",

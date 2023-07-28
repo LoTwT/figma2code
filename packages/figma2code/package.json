@@ -43,9 +43,7 @@
     "watch": "tsup --watch",
     "build": "tsup",
     "typecheck": "tsc --noEmit",
-    "test": "vitest",
-    "prepublishOnly": "pnpm build",
-    "release": "bumpp && npm publish"
+    "test": "vitest"
   },
   "devDependencies": {
     "@figma/plugin-typings": "^1.72.0",
