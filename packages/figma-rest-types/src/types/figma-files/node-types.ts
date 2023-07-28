@@ -3,13 +3,23 @@ import type {
   PAbsoluteBoundingBox,
   PAbsoluteRenderBounds,
   PArcData,
+  PAuthorVisible,
   PBackground,
   PBackgroundColor,
   PBlendMode,
   PBooleanOperation,
+  PCharacterStyleOverrides,
   PCharacters,
   PChidlren,
   PClipsContent,
+  PComponentId,
+  PComponentProperties,
+  PComponentPropertyDefinitions,
+  PConnectorEnd,
+  PConnectorEndStrokeCap,
+  PConnectorLineType,
+  PConnectorStart,
+  PConnectorStartStrokeCap,
   PConstraints,
   PCornerRadius,
   PCornerSmoothing,
@@ -20,12 +30,14 @@ import type {
   PDevStatus,
   PEffects,
   PExportSettings,
+  PExposedInstances,
   PFillGeometry,
   PFillOverrideTable,
   PFills,
   PFlowStartingPoints,
   PHorizontalPadding,
   PIndividualStrokeWeights,
+  PIsExposedInstance,
   PIsMask,
   PIsMaskOutline,
   PItemReverseZIndex,
@@ -36,12 +48,15 @@ import type {
   PLayoutMode,
   PLayoutPositioning,
   PLayoutWrap,
+  PLineIndentations,
+  PLineTypes,
   PLocked,
   PMaxHeight,
   PMaxWidth,
   PMinHeight,
   POpacity,
   POverflowDirection,
+  POverrides,
   PPaddingBottom,
   PPaddingLeft,
   PPaddingRight,
@@ -54,6 +69,7 @@ import type {
   PRectangleCornerRadii,
   PRelativeTransform,
   PSectionContentsHidden,
+  PShapeType,
   PSize,
   PStrokeAlign,
   PStrokeCap,
@@ -64,7 +80,10 @@ import type {
   PStrokeWeight,
   PStrokes,
   PStrokesIncludedInLayout,
+  PStyle,
+  PStyleOverrideTable,
   PStyles,
+  PTextBackground,
   PTransitionDuration,
   PTransitionEasing,
   PTransitionNodeID,
@@ -86,6 +105,15 @@ export type Node =
   | RegularPolygonNode
   | TableNode
   | TabelCellNode
+  | TextNode
+  | SliceNode
+  | ComponentNode
+  | ComponentSetNode
+  | InstanceNode
+  | StickyNode
+  | ShapeWithTextNode
+  | ConnectorNode
+  | WashiTapeNode
 
 /**
  * @see https://www.figma.com/developers/api#document-props
@@ -314,4 +342,154 @@ export interface TabelCellNode
     PRelativeTransform,
     PSize {
   readonly type: "TABLE_CELL"
+}
+
+/**
+ * @see https://www.figma.com/developers/api#text-props
+ */
+export interface TextNode
+  extends Omit<VectorNode, "type" | "fillOverrideTable">,
+    PCharacters,
+    PStyle,
+    PCharacterStyleOverrides,
+    PStyleOverrideTable,
+    PLineTypes,
+    PLineIndentations {
+  readonly type: "TEXT"
+}
+
+/**
+ * @see https://www.figma.com/developers/api#slice-props
+ */
+export interface SliceNode
+  extends BaseNode,
+    PExportSettings,
+    PAbsoluteBoundingBox,
+    PAbsoluteRenderBounds,
+    PSize,
+    PRelativeTransform {
+  readonly type: "SLICE"
+}
+
+/**
+ * @see https://www.figma.com/developers/api#component-props
+ */
+export interface ComponentNode
+  extends Omit<FrameNode, "type">,
+    PComponentPropertyDefinitions {
+  readonly type: "COMPONENT"
+}
+
+/**
+ * @see https://www.figma.com/developers/api#component_set-props
+ */
+export interface ComponentSetNode extends Omit<ComponentNode, "type"> {
+  readonly type: "COMPONENT_SET"
+}
+
+/**
+ * @see https://www.figma.com/developers/api#instance-props
+ */
+export interface InstanceNode
+  extends Omit<FrameNode, "type">,
+    PComponentId,
+    PIsExposedInstance,
+    PExposedInstances,
+    PComponentProperties,
+    POverrides {
+  readonly type: "INSTANCE"
+}
+
+/**
+ * FigJam Sticky node.
+ * @see https://www.figma.com/developers/api#sticky-props
+ */
+export interface StickyNode
+  extends BaseNode,
+    PAbsoluteBoundingBox,
+    PAbsoluteRenderBounds,
+    PAuthorVisible,
+    PBackgroundColor,
+    PBlendMode,
+    PCharacters,
+    PEffects,
+    PExportSettings,
+    PFills,
+    PLocked,
+    POpacity,
+    PRelativeTransform {
+  readonly type: "STICKY"
+}
+
+/**
+ * FigJam Shape-with-text node.
+ * @see https://www.figma.com/developers/api#shape_with_text-props
+ */
+export interface ShapeWithTextNode
+  extends BaseNode,
+    PAbsoluteBoundingBox,
+    PAbsoluteRenderBounds,
+    PBackgroundColor,
+    PBlendMode,
+    PCharacters,
+    PCornerRadius,
+    PRectangleCornerRadii,
+    PCornerSmoothing,
+    PEffects,
+    PExportSettings,
+    PFills,
+    PIsMask,
+    PLocked,
+    POpacity,
+    PShapeType,
+    PStrokes,
+    PStrokeWeight,
+    PStrokeCap,
+    PStrokeJoin,
+    PStrokeDashes,
+    PStrokeAlign,
+    PRelativeTransform,
+    PStyles {
+  readonly type: "SHAPE_WITH_TEXT"
+}
+
+/**
+ * FigJam Connector node.
+ * @see https://www.figma.com/developers/api#connector-props
+ */
+export interface ConnectorNode
+  extends BaseNode,
+    PAbsoluteBoundingBox,
+    PAbsoluteRenderBounds,
+    PBackgroundColor,
+    PBlendMode,
+    PCharacters,
+    PConnectorStart,
+    PConnectorEnd,
+    PConnectorStartStrokeCap,
+    PConnectorEndStrokeCap,
+    PConnectorLineType,
+    PCornerRadius,
+    PRectangleCornerRadii,
+    PCornerSmoothing,
+    PEffects,
+    PExportSettings,
+    PFills,
+    PIsMask,
+    PLocked,
+    POpacity,
+    PStrokes,
+    PStrokeWeight,
+    PStrokeCap,
+    PStrokeJoin,
+    PStrokeDashes,
+    PStrokeAlign,
+    PTextBackground,
+    PRelativeTransform,
+    PStyles {
+  readonly type: "CONNECTOR"
+}
+
+export interface WashiTapeNode extends Omit<VectorNode, "type"> {
+  readonly type: "WASHI_TAPE"
 }

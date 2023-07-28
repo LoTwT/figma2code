@@ -1,7 +1,13 @@
 import type { Nullable } from "@ayingott/sucrose"
 import type {
+  ArcData,
   BlendMode,
   Color,
+  ComponentProperty,
+  ComponentPropertyDefinition,
+  ConnectorEndpoint,
+  ConnectorLineType,
+  ConnectorTextBackground,
   EasingType,
   Effect,
   ExportSetting,
@@ -9,13 +15,16 @@ import type {
   LayoutConstraint,
   LayoutGrid,
   Node,
+  Overrides,
   Paint,
   PaintOverride,
   PrototypeDevice,
   Rectangle,
+  ShapeType,
   StrokeWeights,
   StyleType,
   Transform,
+  TypeStyle,
   Vector,
 } from "."
 
@@ -593,6 +602,190 @@ export interface PBooleanOperation {
    * indicating the type of boolean operation applied
    */
   booleanOperation: BooleanOperation
+}
+
+export interface PArcData {
+  /**
+   * Start and end angles of the ellipse measured clockwise from the x axis, plus the inner radius for donuts
+   */
+  arcData: ArcData
+}
+
+export interface PCharacters {
+  /**
+   * Text contained within a text box
+   */
+  characters: string
+}
+
+export interface PStyle {
+  /**
+   * Style of text including font family and weight (see type style section for more information)
+   */
+  style: TypeStyle
+}
+
+export interface PCharacterStyleOverrides {
+  /**
+   * Array with same number of elements as characters in text box, each element is a reference to the styleOverrideTable defined below and maps to the corresponding character in the characters field.
+   * Elements with value 0 have the default type style
+   */
+  characterStyleOverrides: number[]
+}
+
+/**
+ * Map from ID to TypeStyle for looking up style overrides
+ */
+export interface PStyleOverrideTable {
+  styleOverrideTable: Record<number, TypeStyle>
+}
+
+/**
+ * An array with the same number of elements as lines in the text node, where lines are delimited by newline or paragraph separator characters.
+ * Each element in the array corresponds to the list type of a specific line.
+ */
+export interface PLineTypes {
+  lineTypes: LineType[]
+}
+
+/**
+ * An array with the same number of elements as lines in the text node, where lines are delimited by newline or paragraph separator characters.
+ * Each element in the array corresponds to the indentation level of a specific line.
+ */
+export interface PLineIndentations {
+  lineIndentations: number[]
+}
+
+/**
+ * A mapping of name to ComponentPropertyDefinition for every component property on this component.
+ * Each property has a type, defaultValue, and other optional values
+ * @default {}
+ */
+export interface PComponentPropertyDefinitions {
+  componentPropertyDefinitions: Record<string, ComponentPropertyDefinition>
+}
+
+/**
+ * ID of component that this instance came from, refers to components table
+ */
+export interface PComponentId {
+  componentId: string
+}
+
+/**
+ * If true, this node has been marked as exposed to its containing component or component set
+ * @default false
+ */
+export interface PIsExposedInstance {
+  isExposedInstance: boolean
+}
+
+/**
+ * IDs of instances that have been exposed to this node's level
+ * @default []
+ */
+export interface PExposedInstances {
+  exposedInstances: string[]
+}
+
+/**
+ * A mapping of name to ComponentProperty for all component properties on this instance.
+ * Each property has a type, value, and other optional values (see properties type section below)
+ */
+export interface PComponentProperties {
+  componentProperties: Record<string, ComponentProperty>
+}
+
+/**
+ * An array of all of the fields directly overridden on this instance.
+ * Inherited overrides are not included.
+ * @default []
+ */
+export interface POverrides {
+  overrides: Overrides[]
+}
+
+/**
+ * If true, author name is visible.
+ * @default false
+ */
+export interface PAuthorVisible {
+  authorVisible: boolean
+}
+
+/**
+ * Shape-with-text geometric shape type.
+ */
+export interface PShapeType {
+  shapeType: ShapeType
+}
+
+/**
+ * Connector starting endpoint.
+ */
+export interface PConnectorStart {
+  connectorStart: ConnectorEndpoint
+}
+
+/**
+ * Connector ending endpoint.
+ */
+export interface PConnectorEnd {
+  connectorEnd: ConnectorEndpoint
+}
+
+/**
+ * describing the end cap of the start of the connector.
+ * @default ConnectorStrokeCap.NONE
+ */
+export interface PConnectorStartStrokeCap {
+  connectorStartStrokeCap: ConnectorStrokeCap
+}
+
+/**
+ * describing the end cap of the start of the connector.
+ * @default ConnectorStrokeCap.NONE
+ */
+export interface PConnectorEndStrokeCap {
+  connectorEndStrokeCap: ConnectorStrokeCap
+}
+
+/**
+ * Connector line type.
+ */
+export interface PConnectorLineType {
+  connectorLineType: ConnectorLineType
+}
+
+export enum ConnectorStrokeCap {
+  NONE = "NONE",
+  LINE_ARROW = "LINE_ARROW",
+  TRIANGLE_ARROW = "TRIANGLE_ARROW",
+  DIAMOND_ARROW = "DIAMOND_ARROW",
+  CIRCLE_FILLED = "CIRCLE_FILLED",
+  TRIANGLE_FILLED = "TRIANGLE_FILLED",
+}
+
+/**
+ * Connector text background.
+ */
+export interface PTextBackground {
+  textBackground: ConnectorTextBackground
+}
+
+export enum LineType {
+  /**
+   * Text is an ordered list (numbered)
+   */
+  ORDERED = "ORDERED",
+  /**
+   * Text is an unordered list (bulleted)
+   */
+  UNORDERED = "UNORDERED",
+  /**
+   * Text is plain text and not part of any list
+   */
+  NONE = "NONE",
 }
 
 export enum BooleanOperation {
