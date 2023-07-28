@@ -36,6 +36,8 @@
     "dist"
   ],
   "scripts": {
+    "watch": "tsup --watch",
+    "build": "tsup",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "pnpm build",
     "release": "bumpp && npm publish"
