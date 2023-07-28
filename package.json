@@ -21,8 +21,7 @@
     "prepare": "simple-git-hooks",
     "up": "taze latest -I -r",
     "play": "pnpm -C playground run dev",
-    "prepublishOnly": "pnpm build -r",
-    "release": "bumpp -r && pnpm publish -r"
+    "release": "bumpp -r && pnpm build -r && pnpm publish -r --access public"
   },
   "devDependencies": {
     "@ayingott/eslint-config": "^0.2.6",
